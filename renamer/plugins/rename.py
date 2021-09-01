@@ -34,7 +34,8 @@ async def media(c, m):
         time_gap = await timegap_check(m)
         if time_gap:
             return
-    file = update.document or update.video or update.audio or update.voice or update.video_note
+
+    file = m.document or m.video or m.audio or m.voice or m.video_note
     try:
         filename = file.file_name
     except:
