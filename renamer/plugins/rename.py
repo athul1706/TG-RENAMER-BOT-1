@@ -41,7 +41,7 @@ async def media(c, m):
     except:
         filename = "Not Available"
     
-    file_name = await c.ask(chat_id=m.from_user.id, text=f"<code>{file.file_name}</code> \n\nSend me the New FileName for this file or send /cancel to stop", filters=filters.text)
+    file_name = await c.ask(chat_id=m.from_user.id, text=f"<b>FILE NAME:</b> <code>{file.file_name}</code> \n\nSend me the New FileName for this file or send /cancel to stop", filters=filters.text)
     await file_name.delete()
     await file_name.request.delete()
     new_file_name = file_name.text
