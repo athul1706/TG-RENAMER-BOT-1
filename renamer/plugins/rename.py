@@ -34,8 +34,13 @@ async def media(c, m):
         time_gap = await timegap_check(m)
         if time_gap:
             return
-
-    file_name = await c.ask(chat_id=m.from_user.id, text="Send me the New FileName for this file or send /cancel to stop", filters=filters.text)
+    file = update.document or update.video or update.audio or update.voice or update.video_note
+    try:
+        filename = file.file_name
+    except:
+        filename = "Not Available"
+    
+    file_name = await c.ask(chat_id=m.from_user.id, text="<code>{}</code> \n\nSend me the New FileName for this file or send /cancel to stop", filters=filters.text)
     await file_name.delete()
     await file_name.request.delete()
     new_file_name = file_name.text
