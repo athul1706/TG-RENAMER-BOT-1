@@ -1,4 +1,4 @@
-https://github.com/Mahesh0253/pyrogram/archive/asyncio.zip
+pyrogram==1.2.9
 pyromod==1.5
 tgcrypto
 Pillow
