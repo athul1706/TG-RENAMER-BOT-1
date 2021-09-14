@@ -38,7 +38,7 @@ async def media(c, m):
     file = m.document or m.video or m.audio or m.voice or m.video_note
     try:
         filename = file.file_name
-        caption = file.title
+        caption = file.file_title
     except:
         filename = "Not Available"
         caption = " Not Available"
