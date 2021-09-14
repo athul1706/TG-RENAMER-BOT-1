@@ -38,10 +38,11 @@ async def media(c, m):
     file = m.document or m.video or m.audio or m.voice or m.video_note
     try:
         filename = file.file_name
+        caption = file.file_caption
     except:
         filename = "Not Available"
-    
-    file_name = await c.ask(chat_id=m.from_user.id, text=f"<b>FILE NAME:</b> <code>{file.file_name}</code> \n\nSend me the New FileName for this file or send /cancel to stop", filters=filters.text)
+        caption = " Not Available"
+    file_name = await c.ask(chat_id=m.from_user.id, text=f"<b>FILE NAME:</b> <code>{file.file_name}</code> \n\n<b>CAPTION:</b> <code>{file.file_caption}</code> \n\nSend me the New FileName for this file or send /cancel to stop", filters=filters.text)
     await file_name.delete()
     await file_name.request.delete()
     new_file_name = file_name.text
