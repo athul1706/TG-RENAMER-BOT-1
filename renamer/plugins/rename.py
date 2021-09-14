@@ -35,8 +35,7 @@ async def media(c, m):
         if time_gap:
             return
 
-    file = m.document or m.video or m.audio or m.voice or m.video_note
-    try:
+    for file:
         filename = file.file_name
         caption = file_caption
     except:
