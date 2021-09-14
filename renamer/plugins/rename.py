@@ -35,9 +35,9 @@ async def media(c, m):
         if time_gap:
             return
 
-    for file:
+    if file:
         filename = file.file_name
-        caption = file_caption
+        caption = file.file_caption
     except:
         filename = "Not Available"
         caption = " Not Available"
