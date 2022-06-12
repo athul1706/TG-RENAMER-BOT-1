@@ -1,0 +1,13 @@
+version: "3.9.7"
+services:
+  worker:
+    build: .
+    environment:
+      BOT_TOKEN: $BOT_TOKEN
+      API_ID: $API_ID
+      API_HASH: $API_HASH
+      DATABASE_URL: $DATABASE_URL
+      DATABASE_NAME: $DATABASE_NAME
+      ONWER_ID: $OWNER_ID
+      BOT_PASSWORD: $BOT_PASSWORD
+      
